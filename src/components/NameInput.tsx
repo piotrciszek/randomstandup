@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Button from '../ui/Button';
 import styles from './NameInput.module.css'
 import { NameInputProps } from '../types/types';
-import { removeName } from '../hooks/useNames';
 
 
 const NameInput: React.FC<NameInputProps> = ({ names, onAddName }) => {
@@ -15,17 +14,12 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName }) => {
 
   const handleAddClick = () => {
     if (name.trim() !== '') {
-      onAddName(name);
-      setCurrentNames([...currentNames, name]);
-      setName('');
+        onAddName(name);
+        setCurrentNames([...currentNames, name]);
+        setName('');
     }
   };
 
-//   const handleRemoveClick = (index: number) => {
-//     const updatedNames = currentNames.filter((_, i) => i !== index);
-//     setCurrentNames(updatedNames);
-//     onAddName(updatedNames[index]); // Update the names prop
-//   };
 const handleRemoveClick = (index: number) => {
     const updatedNames = currentNames.filter((_, i) => i !== index);
     setCurrentNames(updatedNames);
@@ -57,46 +51,3 @@ const handleRemoveClick = (index: number) => {
 };
   
   export default NameInput;
-
-// import React, { useState } from 'react';
-// import styles from './NameInput.module.css';
-// import { NameInputProps } from '../types/types';
-
-// const NameInput: React.FC<NameInputProps> = ({ names, onAddName }) => {
-//   const [name, setName] = useState('');
-
-//   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-//     setName(event.target.value);
-//   };
-
-//   const handleAddClick = () => {
-//     if (name.trim() !== '') {
-//       onAddName(name);
-//       setName('');
-//     }
-//   };
-
-//   return (
-//     <div className={styles.container}>
-//       <input
-//         type="text"
-//         value={name}
-//         onChange={handleNameChange}
-//         placeholder="Enter a name"
-//         className={styles.input}
-//       />
-//       <button onClick={handleAddClick} className={styles.addButton}>
-//         Add Name
-//       </button>
-//       <ul className={styles.nameList}>
-//         {names.map((nameItem, index) => (
-//           <li key={index} className={styles.nameItem}>
-//             {nameItem}
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
-
-// export default NameInput;

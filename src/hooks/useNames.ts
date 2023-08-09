@@ -9,7 +9,7 @@ export function pickRandomName(names: string[]): string {
     }
     return '';
   }
-export function removeName(names: string[], setNames: (names: string[]) => void, index: number) {
-  const updatedNames = names.filter((_, i) => i !== index);
-  setNames(updatedNames);
-}
+  export function removeName(names: string[], setNames: (names: string[]) => void, index: number) {
+    const updatedNames = names.filter((_, i) => i !== index);
+    setNames(updatedNames);
+  }
