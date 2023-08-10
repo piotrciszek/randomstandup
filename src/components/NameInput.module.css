@@ -27,7 +27,7 @@
   }
 
   .removeButton {
-    margin-left: auto; /* Push the "Remove" button to the right */
+    margin-left: auto;
     background: none;
     border: none;
     color: red;

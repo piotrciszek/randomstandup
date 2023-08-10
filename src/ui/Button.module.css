@@ -7,8 +7,19 @@
     cursor: pointer;
 }
 
+.button:hover, .button:active{
+    background-color: #13467e;
+    color: #fff;
+
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    background-color: #96b1d1;
+    color: #59739c;
+}
+
 .removeButton {
-    /* remove button styles */
     background: none;
     border: none;
     color: red;

@@ -9,12 +9,17 @@ function App() {
   const [randomName, setRandomName] = useState<string>('');
   
   const handleRemoveName = (index: number) => {
-    removeName(names, setNames, index);
+    const updatedNames = names.filter((_, i) => i !== index);
+    setNames(updatedNames);
   };
 
   return (
     <div className="App">
-      <h1>Random Name Picker</h1>
+      <header className="App-header">
+        <h1 className="App-title">Random Name Picker</h1>
+        <h2 className="App-subtitle">JAD Suite EH</h2>
+      </header>
+      <div className="App-content">
       <NameInput
         names={names}
         onAddName={(name) => setNames(addName(names, name))}
@@ -26,6 +31,7 @@ function App() {
         onPickRandomName={() => setRandomName(pickRandomName(names))}
         names={names}
       />
+      </div>
     </div>
   );
 }

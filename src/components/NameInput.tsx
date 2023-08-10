@@ -4,9 +4,8 @@ import styles from './NameInput.module.css'
 import { NameInputProps } from '../types/types';
 
 
-const NameInput: React.FC<NameInputProps> = ({ names, onAddName }) => {
+const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName }) => {
   const [name, setName] = useState('');
-  const [currentNames, setCurrentNames] = useState(names);
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
@@ -15,14 +14,12 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName }) => {
   const handleAddClick = () => {
     if (name.trim() !== '') {
         onAddName(name);
-        setCurrentNames([...currentNames, name]);
         setName('');
     }
   };
 
 const handleRemoveClick = (index: number) => {
-    const updatedNames = currentNames.filter((_, i) => i !== index);
-    setCurrentNames(updatedNames);
+    onRemoveName(index);
   };
 
   return (
@@ -38,7 +35,7 @@ const handleRemoveClick = (index: number) => {
         Add Name
       </Button>
       <ul className={styles.nameList}>
-        {currentNames.map((nameItem, index) => (
+        {names.map((nameItem, index) => (
           <li key={index} className={styles.nameItem}>
             {nameItem}
             <Button onClick={() => handleRemoveClick(index)} type="remove">

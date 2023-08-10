@@ -2,6 +2,7 @@ export interface ButtonProps {
     onClick: () => void;
     children: React.ReactNode;
     type?: 'remove';
+    disabled?: boolean;
 }
 
 export interface RandomNameDisplayProps {
