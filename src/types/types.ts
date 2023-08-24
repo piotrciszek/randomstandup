@@ -6,7 +6,7 @@ export interface ButtonProps {
 }
 
 export interface RandomNameDisplayProps {
-    randomName: string;
+    randomName: string | null;
     onPickRandomName: () => void;
     names: string[];
 }
