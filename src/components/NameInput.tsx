@@ -13,8 +13,8 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
 
   const handleAddClick = () => {
     if (name.trim() !== '') {
-        onAddName(name);
-        setName('');
+      onAddName(name);
+      setName('');
     }
   };
 
@@ -23,35 +23,35 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
     handleAddClick();
   };
 
-const handleRemoveClick = (index: number) => {
+  const handleRemoveClick = (index: number) => {
     onRemoveName(index);
   };
-
+  
   return (
     <div className={styles.container}>
       <form onSubmit={handleFormSubmit}>
-      <input
-        type="text"
-        value={name}
-        onChange={handleNameChange}
-        placeholder="Enter a name"
-        className={styles.input}
-      />
-      <Button onClick={handleAddClick}>
-        Add Name
-      </Button>
-      <ul className={styles.nameList}>
-        {names.map((nameItem, index) => (
-          <li key={index} className={styles.nameItem}>
-            {nameItem}
-            <Button onClick={() => handleRemoveClick(index)} type="remove">
-            </Button>
-          </li>
-        ))}
-      </ul>
+        <input
+          type="text"
+          value={name}
+          onChange={handleNameChange}
+          placeholder="Enter a name"
+          className={styles.input}
+        />
+        <Button onClick={handleAddClick} disabled={name.trim().length === 0}>
+          Add Name
+        </Button>
+        <ul className={styles.nameList}>
+          {names.map((nameItem, index) => (
+            <li key={index} className={styles.nameItem}>
+              {nameItem}
+              <Button onClick={() => handleRemoveClick(index)} type="remove">
+              </Button>
+            </li>
+          ))}
+        </ul>
       </form>
     </div>
   );
 };
-  
-  export default NameInput;
+
+export default NameInput;

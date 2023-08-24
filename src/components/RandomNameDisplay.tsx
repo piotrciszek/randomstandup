@@ -4,7 +4,6 @@ import styles from './RandomNameDisplay.module.css';
 import { RandomNameDisplayProps } from '../types/types';
 
 
-
 const RandomNameDisplay: React.FC<RandomNameDisplayProps> = ({ randomName, onPickRandomName, names }) => (
     
     <div className={styles.randomNameContainer}>
@@ -18,5 +17,3 @@ const RandomNameDisplay: React.FC<RandomNameDisplayProps> = ({ randomName, onPic
     );
 
 export default RandomNameDisplay;
-
-
