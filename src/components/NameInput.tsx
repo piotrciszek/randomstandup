@@ -18,12 +18,18 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
     }
   };
 
+  const handleFormSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    handleAddClick();
+  };
+
 const handleRemoveClick = (index: number) => {
     onRemoveName(index);
   };
 
   return (
     <div className={styles.container}>
+      <form onSubmit={handleFormSubmit}>
       <input
         type="text"
         value={name}
@@ -43,6 +49,7 @@ const handleRemoveClick = (index: number) => {
           </li>
         ))}
       </ul>
+      </form>
     </div>
   );
 };
