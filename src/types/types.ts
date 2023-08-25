@@ -6,7 +6,7 @@ export interface ButtonProps {
 }
 
 export interface RandomNameDisplayProps {
-    randomName: string;
+    randomName: string | null;
     onPickRandomName: () => void;
     names: string[];
 }
@@ -15,4 +15,10 @@ export interface NameInputProps {
     names: string[];
     onAddName: (name: string) => void;
     onRemoveName: (index: number) => void;
+}
+
+export type AirportProps = {
+    id: number;
+    icao: string;
+    name: string;
 }
