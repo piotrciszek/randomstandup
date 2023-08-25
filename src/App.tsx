@@ -1,5 +1,10 @@
 import './App.css';
-import RandomPickerPage from './pages/RandomPickerPage';
+
+import Main from './layout/Main';
+import NameInput from './components/NameInput';
+import RandomNameDisplay from './components/RandomNameDisplay';
+import { addName, pickRandomName, removeName } from './hooks/useNames';
+
 
 function App() {
 
@@ -10,7 +15,7 @@ function App() {
         <h2 className="App-subtitle">JAD Suite EH</h2>
       </header>
       <div className="App-content">
-      <RandomPickerPage/>
+        <Main/>
       </div>
     </div>
   );

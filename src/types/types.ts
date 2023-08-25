@@ -16,3 +16,9 @@ export interface NameInputProps {
     onAddName: (name: string) => void;
     onRemoveName: (index: number) => void;
 }
+
+export type AirportProps = {
+    id: number;
+    icao: string;
+    name: string;
+}
