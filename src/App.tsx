@@ -1,9 +1,6 @@
 import './App.css';
 
 import Main from './layout/Main';
-import NameInput from './components/NameInput';
-import RandomNameDisplay from './components/RandomNameDisplay';
-import { addName, pickRandomName, removeName } from './hooks/useNames';
 
 
 function App() {

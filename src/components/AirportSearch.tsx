@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
 import useHttp,  { ServerResponse, RequestObject} from '../hooks/useHttp';
 
 const AirportSearch: React.FC = () => {
   const [icao, setIcao] = useState('');
   const [name, setName] = useState('');
   const [searchResults, setSearchResults] = useState<ServerResponse['data']>([]);
-  const { sendRequest } = useHttp()
+  const { sendRequest } = useHttp();
+  const navigate = useNavigate();
 
 
   const handleSearch = () => {
@@ -44,6 +46,10 @@ const AirportSearch: React.FC = () => {
   };
   console.log('searchResults:', searchResults);
 
+  const handleOpen = (id: number) => {
+    navigate(`/airport/${id}`);
+  };
+
   return (
     <div>
       <h2>Random Standup Airport Search</h2>
@@ -67,11 +73,26 @@ const AirportSearch: React.FC = () => {
       {searchResults.length > 0 ? (
       <div>
         <h3>Search Results:</h3>
-        <ul>
-          {searchResults.map((airport: any) => (
-            <li key={airport.id}>{airport.name}</li>
-          ))}
-        </ul>
+        <table>
+              <thead>
+                <tr>
+                  <th>ICAO</th>
+                  <th>Name</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {searchResults.map((airport: any) => (
+                  <tr key={airport.id}>
+                    <td>{airport.icao}</td>
+                    <td>{airport.name}</td>
+                    <td>
+                      <button onClick={() => handleOpen(airport.id)}>Open</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              </table>
       </div>
       ) : (
         <p>No search results found.</p>)}

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import NameInput from '../components/NameInput';
 import RandomNameDisplay from '../components/RandomNameDisplay';
-import { NameInputProps, RandomNameDisplayProps } from '../types/types';
+import predefinedNames from '../data/predefinedNames';
 
 const RandomPickerPage: React.FC = () => {
-  const [names, setNames] = useState<string[]>([]);
+  const [names, setNames] = useState<string[]>(predefinedNames);
   const [randomName, setRandomName] = useState<string | null>(null);
 
   const handleAddName = (newName: string) => {
