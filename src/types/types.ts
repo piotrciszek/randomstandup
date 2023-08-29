@@ -9,6 +9,7 @@ export interface RandomNameDisplayProps {
     randomName: string | null;
     onPickRandomName: () => void;
     names: string[];
+    isLoading: boolean;
 }
 
 export interface NameInputProps {

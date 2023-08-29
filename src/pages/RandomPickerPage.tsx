@@ -6,6 +6,7 @@ import predefinedNames from '../data/predefinedNames';
 const RandomPickerPage: React.FC = () => {
   const [names, setNames] = useState<string[]>(predefinedNames);
   const [randomName, setRandomName] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleAddName = (newName: string) => {
     setNames(prevNames => [...prevNames, newName]);
@@ -17,8 +18,12 @@ const RandomPickerPage: React.FC = () => {
 
   const handlePickRandomName = () => {
     if (names.length > 0) {
-      const randomIndex = Math.floor(Math.random() * names.length);
-      setRandomName(names[randomIndex]);
+      setIsLoading(true);
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * names.length);
+        setRandomName(names[randomIndex]);
+        setIsLoading(false);
+      }, 1000);
     }
   };
 
@@ -33,6 +38,7 @@ const RandomPickerPage: React.FC = () => {
         randomName={randomName}
         onPickRandomName={handlePickRandomName}
         names={names}
+        isLoading={isLoading}
       />
     </div>
   );

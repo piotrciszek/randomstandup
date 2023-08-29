@@ -24,23 +24,27 @@
 
   .nameList {
     list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     max-width: 60%;
     margin: 20px auto;
+    padding: 0;
+    justify-content: center;
   }
 
   .nameItem {
-    padding: 5px;
-    border-bottom: 1px solid #ccc;
-    width: 100px;
+    position: relative;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
   }
-
-  .removeButton {
-    margin-left: auto;
-    background: none;
-    border: none;
-    color: red;
-    cursor: pointer;
+  
+  .nameItem:hover {
+    background-color: #ddd;
   }
