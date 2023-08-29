@@ -26,6 +26,19 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
   const handleRemoveClick = (index: number) => {
     onRemoveName(index);
   };
+
+  const handleDragStart = (event: React.DragEvent<HTMLLIElement>, index: number) => {
+    event.dataTransfer.setData('index', index.toString());
+  };
+
+  const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+  };
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    const fromIndex = Number(event.dataTransfer.getData('index'));
+    onRemoveName(fromIndex);
+  };
   
   return (
     <div className={styles.container}>
@@ -42,13 +55,27 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
         </Button>
         <ul className={styles.nameList}>
           {names.map((nameItem, index) => (
-            <li key={index} className={styles.nameItem}>
+            <li 
+              key={index}
+              className={styles.nameItem}
+              draggable
+              onDragStart={(event) => handleDragStart(event, index)}
+              >
               {nameItem}
               <Button onClick={() => handleRemoveClick(index)} type="remove">
               </Button>
             </li>
           ))}
         </ul>
+        {names.length > 0 && (
+        <div
+          className={styles.trash}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
+        >
+          Drop here to remove
+        </div>
+        )}
       </form>
     </div>
   );
