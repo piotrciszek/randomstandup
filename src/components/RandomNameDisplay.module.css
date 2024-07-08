@@ -1,15 +1,30 @@
 .randomNameContainer {
-    text-align: center;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
     margin-bottom: 80px;
     position: relative;
-    height: 80px;
+    height: 100px;
   }
 
-.randomNameText {
+/* .randomNameText {
     font-size: 1.2rem;
     font-weight: bold;
     margin: 40px 0;
+  } */
+  .randomNameText {
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 60px auto;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    color: #333;
   }
 
 .spinnerContainer {
@@ -17,7 +32,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 60px;
+    margin-top: 80px;
     top: 0;
     left: 0;
     width: 100%;

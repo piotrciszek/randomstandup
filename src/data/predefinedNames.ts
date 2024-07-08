@@ -1,5 +1,5 @@
 const predefinedNames: string[] = ["Ania", "Bartek", "Grzegorz", "Karol", "Kasia",
                                 "Katja", "Maciej", "Marcin", "Mateusz", "Monika",
-                                "Piotr C", "Piotr Cz", "Roland", "Sebastian", "Sławek"];
+                                "Piotr C", "Piotr Cz", "Roland", "Sebastian", "Sławek", "Wojeciech"];
 
 export default predefinedNames;
