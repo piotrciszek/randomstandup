@@ -5,7 +5,14 @@
     margin-bottom: 20px;
   }
   
-  .input {
+  .addName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* .input {
     padding: 8px;
     margin-right: 10px;
     border-radius: 4px;
@@ -20,13 +27,12 @@
     color: white;
     border: none;
     cursor: pointer;
-  }
+  } */
 
   .nameList {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
     max-width: 60%;
     margin: 20px auto;
     padding: 0;
@@ -42,24 +48,30 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
+    height: 1.5rem;
   }
   
   .nameItem:hover {
     background-color: #c0c0c0;
   }
 
-  .trash {
+  .dropArea {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 2px dashed #ff0000;
     padding: 10px;
-    margin-top: 10px;
+    margin: 10px auto;
     text-align: center;
     color: #ff0000;
     cursor: pointer;
-    height: 30px;
-    width: 180px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 40px;
+    width: 100%;
+    max-width: 250px;
+    background-color: #ffebee;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropArea:hover {
+    background-color: #ffcdd2;
   }

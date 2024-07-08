@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import Button from '../ui/Button';
+// import Button from '../ui/Button';
+import { Button, Grid, IconButton, Paper, TextField, Typography } from '@mui/material';
 import styles from './NameInput.module.css'
 import { NameInputProps } from '../types/types';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import CloseIcon from '@mui/icons-material/Close'; 
 
 
 const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName }) => {
@@ -27,7 +30,7 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
     onRemoveName(index);
   };
 
-  const handleDragStart = (event: React.DragEvent<HTMLLIElement>, index: number) => {
+  const handleDragStart = (event: any, index: number) => {
     event.dataTransfer.setData('index', index.toString());
   };
 
@@ -43,17 +46,59 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
   return (
     <div className={styles.container}>
       <form onSubmit={handleFormSubmit}>
-        <input
+        {/* <input
           type="text"
           value={name}
           onChange={handleNameChange}
           placeholder="Enter a name"
           className={styles.input}
-        />
-        <Button onClick={handleAddClick} disabled={name.trim().length === 0}>
+        /> */}
+        {/* <Button 
+          onClick={handleAddClick}
+          disabled={name.trim().length === 0}
+        >
           Add Name
-        </Button>
-        <ul className={styles.nameList}>
+        </Button> */}
+        <div className={styles.addName}>
+          <TextField
+            type="text"
+            size="small"
+            placeholder="Enter a name"
+            label="Name"
+            value={name}
+            onChange={handleNameChange}
+          />
+          <Button 
+            onClick={handleAddClick}
+            disabled={name.trim().length === 0}
+            variant="contained"
+            color="primary"
+            endIcon={<PersonAddIcon/>}
+            sx={{ textTransform: 'none' }}
+          >
+            Add Name
+          </Button>
+        </div>
+        <div className={styles.nameList}>
+        <Grid container spacing={1.5} justifyContent="center">
+          {names.map((nameItem, index) => (
+            <Grid item key={index} >
+              <Paper
+                elevation={1}
+                className={styles.nameItem}
+                draggable
+                onDragStart={(event) => handleDragStart(event, index)}
+              >
+                <Typography sx={{ flexGrow: 1 }}>{nameItem}</Typography>
+                <IconButton aria-label="remove" onClick={() => handleRemoveClick(index)}>
+                  <CloseIcon />
+                </IconButton>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+        </div>
+        {/* <ul className={styles.nameList}>
           {names.map((nameItem, index) => (
             <li 
               key={index}
@@ -66,15 +111,22 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
               </Button>
             </li>
           ))}
-        </ul>
+        </ul> */}
         {names.length > 0 && (
         <div
-          className={styles.trash}
+          className={styles.dropArea}
           onDragOver={handleDragOver}
           onDrop={handleDrop}
         >
           Drop here to remove
         </div>
+        // <Box
+        //     className={styles.dropArea}
+        //     onDragOver={handleDragOver}
+        //     onDrop={handleDrop}
+        //   >
+        //     <Typography>Drop here to remove</Typography>
+        //   </Box>
         )}
       </form>
     </div>
