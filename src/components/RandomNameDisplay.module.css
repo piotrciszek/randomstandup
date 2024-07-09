@@ -16,7 +16,7 @@
   .randomNameText {
     font-size: 1.5rem;
     text-align: center;
-    margin: 60px auto;
+    margin: 40px auto;
     padding: 10px;
     width: 100%;
     max-width: 600px;
@@ -32,7 +32,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    margin-top: 80px;
+    margin-top: 60px;
     top: 0;
     left: 0;
     width: 100%;

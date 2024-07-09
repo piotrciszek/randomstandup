@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NameInput from '../components/NameInput';
 import RandomNameDisplay from '../components/RandomNameDisplay';
+import SimonGameLink from '../components/SimonGameLink';
 import predefinedNames from '../data/predefinedNames';
 
 const RandomPickerPage: React.FC = () => {
@@ -40,6 +41,7 @@ const RandomPickerPage: React.FC = () => {
         names={names}
         isLoading={isLoading}
       />
+      <SimonGameLink />
     </div>
   );
 };
