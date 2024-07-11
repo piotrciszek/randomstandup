@@ -11,23 +11,23 @@
     height: 60px;
     width: 100%;
     max-width: 300px;
+    color: #ff0000;
+    background-color: #ffebee;
     transition: background-color 0.3s ease;
-    color: #1976d2;
   }
   
   .dropArea.dark {
     background-color: #c72626;
-    color: #ffffff;
-    border-color: #dc004e;
+    color: #d7d7d7;
+    border-color: #d7d7d7;
   }
   
   .dropArea:hover {
-    background-color: #8fb1d3;
-    border-color: #1976d2;
+    background-color: #ffcdd2;
   }
   
-  .dark:hover {
-    background-color: #1976d2;
-    border-color: #b11414;
+  .dropArea.dark:hover {
+    background-color: #e58e8e;
+    border-color: #c72626;
   }
   

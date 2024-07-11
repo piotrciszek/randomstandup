@@ -72,6 +72,7 @@ export const darkTheme = createTheme({
             styleOverrides: {
               root: {
                 backgroundColor: '#1f1f1f',
+                border: '1px solid #5c5c5c',
                 color: '#d7d7d7',
                 '&:hover': {
                   backgroundColor: '#3a3a3a',

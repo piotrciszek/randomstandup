@@ -66,6 +66,7 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
             Add Name
           </Button>
         </div>
+      </form>
         <div className={styles.nameList}>
         <Grid container spacing={1.5} justifyContent="center">
           {names.map((nameItem, index) => (
@@ -88,7 +89,6 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
         {names.length > 0 && (
          <DropArea onDragOver={handleDragOver} onDrop={handleDrop} />
         )}
-      </form>
     </div>
   );
 };

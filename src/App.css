@@ -2,4 +2,7 @@ body {
   /* font-family: Arial, sans-serif; */
 }
 
-
+.AppContainer {
+  max-width: 1600px !important;
+  margin-top: 20px;
+}

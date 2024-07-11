@@ -20,9 +20,12 @@ const RandomNameDisplay: React.FC<RandomNameDisplayProps> = ({
             disabled={names.length === 0}
             variant="contained"
             color="primary"
-            size="large"
             endIcon={<ShuffleIcon/>}
-            sx={{ textTransform: 'none' }}>
+            sx={{ 
+              textTransform: 'none',
+              fontSize: '1.5rem',
+              padding: '16px 32px',
+            }}>
             Pick a Name
         </Button>
         {isLoading ? (
