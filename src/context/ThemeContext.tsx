@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useMemo } from 'react';
 import { ThemeProvider, Theme } from '@mui/material/styles';
-import { lightTheme, darkTheme } from './theme';
+import { lightTheme, darkTheme } from '../theme/theme'
+import usePersistedState from '../hooks/usePersistedState';
 
 interface ThemeContextType {
   theme: Theme;
@@ -17,10 +18,10 @@ export const useThemeContext = () => {
   return context;
 };
 
-export const ThemeProviderComponent : React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [mode, setMode] = React.useState<'light' | 'dark'>('light');
+export const ThemeProviderComponent: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [mode, setMode] = usePersistedState<'light' | 'dark'>('themeMode', 'light');
 
-  const theme = React.useMemo(() => (mode === 'light' ? lightTheme : darkTheme), [mode]);
+  const theme = useMemo(() => (mode === 'light' ? lightTheme : darkTheme), [mode]);
 
   const toggleTheme = () => {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
