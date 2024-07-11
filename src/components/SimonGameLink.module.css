@@ -1,4 +1,60 @@
-.LinkContainer {
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
+/* .LinkContainer {
     margin-top: 10px;
     text-align: right;
+} */
+
+.LinkContainer {
+    width: 210px;
+    text-align: center;
+}
+
+.buttonLike {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #ff8000;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #ff8000;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 4px 4px 0 #fff, 6px 6px 0 #ff8000;
+    transition: transform 0.1s, box-shadow 0.1s;
+    white-space: pre-wrap;
+}
+
+.buttonLike:hover {
+    background-color: #fff;
+    color: #ff8000;
+    box-shadow: 2px 2px 0 #fff, 4px 4px 0 #ff8000;
+    transform: translate(-2px, -2px);
+}
+
+.buttonLike.dark {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #00FF00;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #00FF00;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 4px 4px 0 #000, 6px 6px 0 #00FF00;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.buttonLike.dark:hover {
+    background-color: #000;
+    color: #00FF00;
+    box-shadow: 2px 2px 0 #000, 4px 4px 0 #00FF00;
+    transform: translate(-2px, -2px);
+}
+
+.simonGameFont {
+    font-family: 'Press Start 2P', cursive;
 }
