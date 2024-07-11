@@ -1,14 +1,21 @@
 .headerContainer {
   display: flex;
   align-items: center;
-  max-width: 1500px !important;
+  max-width: 1600px !important;
+}
+
+.headerToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header {
   text-align: center;
-  width: 100%;
-  margin: 20px 0px 20px 240px;
-  padding-right: 100px;
+  width: 50%;
+  justify-content: space-between;
+  margin: 20px 0px;
+  padding-right: 60px;
 }
 
 .switch {

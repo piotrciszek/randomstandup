@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Container, Switch, Toolbar, Typography } from '@mui/material';
+import SimonGameLink from '../components/SimonGameLink';
 import styles from './Header.module.css';
 import { useThemeContext } from '../ThemeContext';
 
@@ -18,7 +19,8 @@ const Header = () => {
         },
       }}>
       <Container className={styles.headerContainer}>
-        <Toolbar>
+        <Toolbar className={styles.headerToolbar}>
+          <SimonGameLink/>
           <div className={styles.header}>
             <Typography variant="h3" className={styles.title}>
               Random Name Picker
