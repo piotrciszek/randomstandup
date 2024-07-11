@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Container, Switch, Toolbar, Typography } from '@mui/material';
 import SimonGameLink from '../components/SimonGameLink';
 import styles from './Header.module.css';
-import { useThemeContext } from '../ThemeContext';
+import { useThemeContext } from '../context/ThemeContext';
 
 const Header = () => {
     const { toggleTheme, theme } = useThemeContext();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useThemeContext } from '../ThemeContext';
+import { useThemeContext } from '../context/ThemeContext';
 import styles from './SimonGameLink.module.css';
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Paper } from '@mui/material';
 import styles from './DropArea.module.css';
-import { useThemeContext } from '../ThemeContext';
+import { useThemeContext } from '../context/ThemeContext';
 
 interface DropAreaProps {
   onDragOver: (event: React.DragEvent<HTMLDivElement>) => void;
