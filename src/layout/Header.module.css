@@ -1,0 +1,29 @@
+.headerContainer {
+  display: flex;
+  align-items: center;
+  max-width: 1500px !important;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+  margin: 20px 0px 20px 240px;
+  padding-right: 100px;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  min-width: 170px;
+  margin-left: 0px;
+}
+
+.title {
+  padding: 1rem 0;
+  font-weight: 600 !important;
+}
+
+.subtitle {
+  padding: 0.5rem 0;
+}
