@@ -1,6 +1,5 @@
 import React from 'react';
-// import Button from '../ui/Button';
-import { Button, CircularProgress, Typography } from '@mui/material';
+import { Button, Paper, Typography } from '@mui/material';
 import styles from './RandomNameDisplay.module.css';
 import { RandomNameDisplayProps } from '../types/types';
 import LoadingSpinner from '../ui/LoadingSpinner';
@@ -26,24 +25,17 @@ const RandomNameDisplay: React.FC<RandomNameDisplayProps> = ({
             sx={{ textTransform: 'none' }}>
             Pick a Name
         </Button>
-        {/* {isLoading ? (
-        <div className={styles.spinnerContainer}>
-          <CircularProgress />
-        </div>
-      ) : (
-        randomName && (
-          <Typography variant="body1" className={styles.randomNameText}>
-            Next standup will be conducted by: {randomName}!
-          </Typography>
-        )
-      )} */}
         {isLoading ? (
             <div className={styles.spinnerContainer}>
             <LoadingSpinner />
             </div>
         ) : (
         randomName && (
-            <h4 className={styles.randomNameText}>Next standup will be conducted by: {randomName} !</h4>
+          <Paper elevation={3} className={styles.randomNameText }>
+            <Typography variant="h5">
+              Next standup will be conducted by: {randomName} !
+            </Typography>
+          </Paper>
         )
         )}
         </div>

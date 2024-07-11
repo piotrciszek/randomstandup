@@ -5,7 +5,7 @@ import styles from './NameInput.module.css'
 import { NameInputProps } from '../types/types';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import CloseIcon from '@mui/icons-material/Close'; 
-
+import DropArea from '../ui/DropArea';
 
 const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName }) => {
   const [name, setName] = useState('');
@@ -46,19 +46,6 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
   return (
     <div className={styles.container}>
       <form onSubmit={handleFormSubmit}>
-        {/* <input
-          type="text"
-          value={name}
-          onChange={handleNameChange}
-          placeholder="Enter a name"
-          className={styles.input}
-        /> */}
-        {/* <Button 
-          onClick={handleAddClick}
-          disabled={name.trim().length === 0}
-        >
-          Add Name
-        </Button> */}
         <div className={styles.addName}>
           <TextField
             type="text"
@@ -85,7 +72,7 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
             <Grid item key={index} >
               <Paper
                 elevation={1}
-                className={styles.nameItem}
+                className={styles.nameItems}
                 draggable
                 onDragStart={(event) => handleDragStart(event, index)}
               >
@@ -98,35 +85,8 @@ const NameInput: React.FC<NameInputProps> = ({ names, onAddName, onRemoveName })
           ))}
         </Grid>
         </div>
-        {/* <ul className={styles.nameList}>
-          {names.map((nameItem, index) => (
-            <li 
-              key={index}
-              className={styles.nameItem}
-              draggable
-              onDragStart={(event) => handleDragStart(event, index)}
-              >
-              {nameItem}
-              <Button onClick={() => handleRemoveClick(index)} type="remove">
-              </Button>
-            </li>
-          ))}
-        </ul> */}
         {names.length > 0 && (
-        <div
-          className={styles.dropArea}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-        >
-          Drop here to remove
-        </div>
-        // <Box
-        //     className={styles.dropArea}
-        //     onDragOver={handleDragOver}
-        //     onDrop={handleDrop}
-        //   >
-        //     <Typography>Drop here to remove</Typography>
-        //   </Box>
+         <DropArea onDragOver={handleDragOver} onDrop={handleDrop} />
         )}
       </form>
     </div>
