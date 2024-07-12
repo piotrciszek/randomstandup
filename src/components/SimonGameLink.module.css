@@ -1,35 +1,35 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 
-/* .LinkContainer {
-    margin-top: 10px;
-    text-align: right;
-} */
-
 .LinkContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     width: 210px;
     text-align: center;
+    margin-left: auto;
+    margin-right: 20px; 
 }
 
 .buttonLike {
     display: inline-block;
     padding: 10px 20px;
     background-color: #fff;
-    color: #ff8000;
+    color: #8000ff;
     text-align: center;
     text-decoration: none;
-    border: 2px solid #ff8000;
+    border: 2px solid #8000ff;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
     letter-spacing: 1px;
-    box-shadow: 4px 4px 0 #fff, 6px 6px 0 #ff8000;
+    box-shadow: 4px 4px 0 #fff, 6px 6px 0 #8000ff;
     transition: transform 0.1s, box-shadow 0.1s;
     white-space: pre-wrap;
 }
 
 .buttonLike:hover {
     background-color: #fff;
-    color: #ff8000;
-    box-shadow: 2px 2px 0 #fff, 4px 4px 0 #ff8000;
+    color: #8000ff;
+    box-shadow: 2px 2px 0 #fff, 4px 4px 0 #8000ff;
     transform: translate(-2px, -2px);
 }
 
